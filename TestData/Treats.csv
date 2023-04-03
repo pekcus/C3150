@@ -1,0 +1,30 @@
+﻿101,1,Concussion,Medication
+764,2,Heart Attack,Medication
+343,3,Amputation,Surgery
+562,4,Tumor,Surgery
+343,5,Birth,C Section
+764,6,Birth,Medication
+906,7,Concussion,Medication
+67,8,Heart Failure,Surgery
+101,9,Meningitis,Surgery
+101,10,Birth,C Section
+562,11,Birth,C Section
+906,12,Tumor,Surgery
+115,13,Meningitis,Surgery
+906,14,Tumor,Surgery
+343,15,Heart Failure,Surgery
+562,16,Heart Attack,Medication
+418,17,Birth,Medication
+67,18,Heart Attack,Medication
+906,19,Tumor,Surgery
+115,20,Cancer,Chemotherapy
+99,21,Heart Attack,Surgery
+418,22,Influenza,Medication
+67,23,Tumor,Surgery
+115,24,Birth,C Section
+99,25,Cancer,Chemotherapy
+418,26,Influenza,Medication
+764,27,Concussion,Medication
+343,28,Cancer,Medication
+418,29,Heart Failure,Surgery
+67,30,Food Poisoning,Medication

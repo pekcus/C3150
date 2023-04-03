@@ -1,0 +1,30 @@
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (21, 3);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (402, 1);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (563, 3);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (774, 2);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (75, 2);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (96, 1);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (7, 2);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (368, 2);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (569, 3);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (710, 3);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (911, 1);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (12, 1);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (313, 1);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (614, 3);
+INSERT INTO NWorksAt (NurseIDNo, HospIDNo)
+VALUES (15, 2);
