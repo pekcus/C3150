@@ -67,3 +67,17 @@ BEGIN
     END
 END
 GO
+
+CREATE TRIGGER TR_Location_Insert
+ON Location
+INSTEAD OF INSERT
+AS
+BEGIN
+    IF (SELECT COUNT(*) FROM inserted) + dbo.GetLocationCount('Location') <= 3
+    BEGIN
+        INSERT INTO Location (LocationID, StreetNum, StreetName, City)
+        SELECT LocationID, StreetNum, StreetName, City
+        FROM inserted
+    END
+END
+GO

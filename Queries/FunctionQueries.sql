@@ -47,3 +47,13 @@ BEGIN
     RETURN @count
 END
 GO
+
+CREATE FUNCTION GetLocationCount (@Location varchar(100))
+RETURNS int
+AS
+BEGIN
+    DECLARE @count int
+    SET @count = (SELECT COUNT(*) FROM Location)
+    RETURN @count
+END
+GO
