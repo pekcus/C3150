@@ -2,9 +2,9 @@
 	Author: Shieanne Bennett
 	COMP-3150 Final Project Submission
 	Insert queries for Hospital Database.
-  Can be used in place of BulkInsert.sql
-  if using Azure Data Studio or if finding
-  errors with the BulkInsert.sql file.
+	Can be used in place of BulkInsert.sql
+	if using Azure Data Studio or if finding
+	errors with the BulkInsert.sql file.
 */
 
 -- Insert files for all tables
