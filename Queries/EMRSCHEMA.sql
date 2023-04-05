@@ -1,3 +1,9 @@
+/*
+	COMP-3150 Final Project Submission
+	Triggers for Hospital Database
+	These queries are by: Shieanne Bennet and Nonika Reingold
+*/
+
 CREATE SCHEMA EMR
     -- Entity tables
     CREATE TABLE dbo.Doctor(
@@ -81,7 +87,7 @@ CREATE SCHEMA EMR
         PrimaryDocID INT NOT NULL,
         Admitted DATE NOT NULL,
         Discharged DATE NOT NULL,
-        PRIMARY KEY (HospIDNo, PatientIDNo),
+        PRIMARY KEY (HospIDNo, PatientIDNo, Admitted, Discharged),
         FOREIGN KEY (HospIDNo) REFERENCES Hospital(HospID),
         FOREIGN KEY (PatientIDNo) REFERENCES Patient(PatientID)
         );
