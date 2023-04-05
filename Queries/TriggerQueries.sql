@@ -9,8 +9,15 @@ ON AdmittedTo
 INSTEAD OF INSERT
 AS
 BEGIN
-    IF (SELECT COUNT(*) FROM inserted) + (SELECT COUNT(*) FROM AdmittedTo, inserted WHERE inserted.HospIDNo = AdmittedTo.HospIDNo AND 
-	(AdmittedTo.Admitted <= inserted.Admitted AND AdmittedTo.Discharged > inserted.Admitted)) <= 10
+-- To successfully insert a patient into AdmittedTo, the hospital must have space for them 
+    IF (((SELECT COUNT(*) FROM inserted) + (SELECT COUNT(*) FROM AdmittedTo, inserted 
+	WHERE inserted.HospIDNo = AdmittedTo.HospIDNo AND 
+	(AdmittedTo.Admitted <= inserted.Admitted AND AdmittedTo.Discharged > inserted.Admitted)) <= 10)
+-- AND the patient is not admitted into a different hospital (i.e. patient cannot be admitted
+-- to more than one hospital at the same time - they are in different locations
+	AND (SELECT COUNT(*) FROM AdmittedTo, inserted 
+	WHERE (inserted.PatientIDNo = AdmittedTo.PatientIDNo AND 
+	(AdmittedTo.Admitted <= inserted.Admitted AND AdmittedTo.Discharged > inserted.Admitted))) = 0)
     BEGIN
         INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
         SELECT HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged
@@ -18,7 +25,6 @@ BEGIN
     END
 END
 GO
---DROP TRIGGER TR_Admit_Insert
 
 CREATE TRIGGER TR_Patient_Insert
 ON Patient
