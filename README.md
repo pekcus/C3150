@@ -6,7 +6,7 @@ Our group selected the hospital project topic and were required to make a databa
 # Navigation
 
 There are three folders titled: Documentation, Queries, and TestData.
-Documentation contains a pdf file describing the project and a short video presentation on the design and implementation. Queries contains all SQL query files, they are DropQuery, InsertQuery, BulkInsert, EMRSCHEMA, and SelectQuery. Finally, TestData contains all important csv files with our project data.
+Documentation contains a pdf file describing the project and a short video presentation on the design and implementation. Queries contains all SQL query files, they are DropQuery, ConstraintsQuery, TriggerQuery, FunctionsQuery, InsertQuery, BulkInsert, TestQuery, EMRSCHEMA, ComplicatedQueries and SelectQuery as well as a folder titled Inserts with all inidividual table insert queries. Finally, TestData contains all important csv files with our project data.
 
 # Usage
 
@@ -14,9 +14,10 @@ In the queries folder, we suggest you run in a specific order.
 
 1. Run DropQuery.sql as this will remove any duplicate tables and data that may conflict with the run of other files. 
 2. Once DropQuery runs, run the EMRSCHEMA.sql file to create the tables. 
-3. We have created both BulkInsert.sql and InsertQuery.sql into our files since Azure Data Management Studio doesn't support BULK INSERT, whereas SQL Server Management Studio does. Therefore, you will find that the InsertQuery.sql contains individual INSERT statements for this exact reason. If running on SSMS you may use the BulkInsert.sql file. 
-4. If you run BulkInsert.sql, change the path of all the statements to the path where the csv files are located on your computer. However, it may be easier to simply run InsertQuery.sql regardless of OS. 
-5. Once all tables have been created and all values have been inserted, run the SelectQuery.sql file to view everything in the database.
+3. Now run the FunctionsQuery.sql, ContraintsQuery.sql and TriggerQuery.sql files in that order.
+4. We have created both BulkInsert.sql and InsertQuery.sql into our files since Azure Data Management Studio doesn't support BULK INSERT, whereas SQL Server Management Studio does. Therefore, you will find that the InsertQuery.sql contains individual INSERT statements for this exact reason. If running on SSMS you may use the BulkInsert.sql file. 
+5. If you run BulkInsert.sql, change the path of all the statements to the path where the csv files are located on your computer. However, it may be easier to simply run InsertQuery.sql regardless of OS. 
+6. Once all tables have been created and all values have been inserted, run the TestQuery.sql, SelectQuery.sql and/or ComplicatedQueries.sql file(s) to view everything in the database.
 
 If you run into any issues while running through these steps, there is a troubleshooting section below that will hopefully help to clear everything up.
 
