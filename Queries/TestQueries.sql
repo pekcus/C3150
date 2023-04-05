@@ -28,7 +28,7 @@ VALUES (1, 6, 562, '2023-03-15', '2023-03-17');
 INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
 VALUES (1, 7, 562, '2023-03-15', '2023-03-17');
 -- Expected output: patients 1-6, 9-11, and 29 are output. Patient 7 was not inserted
-SELECT * FROM AdmittedTo WHERE HospIDNo = 1 AND Admitted <= '2023-03-15' AND Discharged >= '2023-03-16'
+SELECT * FROM AdmittedTo WHERE HospIDNo = 1 AND Admitted <= '2023-03-15' AND Discharged >= '2023-03-16';
 END
 GO
 

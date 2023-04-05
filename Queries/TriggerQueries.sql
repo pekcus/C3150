@@ -21,7 +21,7 @@ BEGIN
     BEGIN
         INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
         SELECT HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged
-        FROM inserted
+        FROM inserted;
     END
 END
 GO
@@ -35,7 +35,7 @@ BEGIN
     BEGIN
         INSERT INTO Patient (PatientID, PName, PhoneNo)
         SELECT PatientID, PName, PhoneNo
-        FROM inserted
+        FROM inserted;
     END
 END
 GO
@@ -49,7 +49,7 @@ BEGIN
     BEGIN
         INSERT INTO Doctor (DocID, DName)
         SELECT DocID, DName
-        FROM inserted
+        FROM inserted;
     END
 END
 GO
@@ -63,7 +63,7 @@ BEGIN
     BEGIN
         INSERT INTO Nurse (NurseID, NName)
         SELECT NurseID, NName
-        FROM inserted
+        FROM inserted;
     END
 END
 GO
@@ -77,7 +77,7 @@ BEGIN
     BEGIN
         INSERT INTO Hospital (HospID, HName, LocationID, DailyCost)
         SELECT HospID, HName, LocationID, DailyCost
-        FROM inserted
+        FROM inserted;
     END
 END
 GO
@@ -91,7 +91,7 @@ BEGIN
     BEGIN
         INSERT INTO Pharmacy (PharmID, LocationID)
         SELECT PharmID, LocationID
-        FROM inserted
+        FROM inserted;
     END
 END
 GO
@@ -105,7 +105,7 @@ BEGIN
     BEGIN
         INSERT INTO Location (LocationID, StreetNum, StreetName, City)
         SELECT LocationID, StreetNum, StreetName, City
-        FROM inserted
+        FROM inserted;
     END
 END
 GO
