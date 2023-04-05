@@ -1,3 +1,9 @@
+/*
+	Author: Shieanne Bennett
+	COMP-3150 Final Project Submission
+	Select queries for Hospital Database.
+*/
+
 -- Show all table headers
 
 -- Entity tables

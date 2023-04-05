@@ -1,9 +1,13 @@
--- BULK INSERT File
--- Note: Path names must be changed for all BULK INSERT queries to where .csv files are saved
--- Ensure all relevant .csv files are downloaded. 
--- Files should include: 
--- Entities: Hospital.csv, Doctor.csv, Nurse.csv, Patient.csv, Pharmacy.csv, Drug.csv, Location.csv
--- Relationships: AdmittedTo.csv, CaresFor.csv, Treats.csv, NWorksAt.csv, DWorksAt.csv, Stocks,csv, OrdersDrug.csv
+/*
+	Author: Shieanne Bennett
+	COMP-3150 Final Project Submission
+	Bulk insert queries for Hospital Database.
+	Note: Path names must be changed for all BULK INSERT queries to where .csv files are saved
+	Ensure all relevant .csv files are downloaded. 
+	Files should include: 
+	Entities: Hospital.csv, Doctor.csv, Nurse.csv, Patient.csv, Pharmacy.csv, Drug.csv, Location.csv
+	Relationships: AdmittedTo.csv, CaresFor.csv, Treats.csv, NWorksAt.csv, DWorksAt.csv, Stocks,csv, OrdersDrug.csv
+*/
 
 -- Entities
 BULK INSERT Hospital

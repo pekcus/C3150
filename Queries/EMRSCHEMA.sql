@@ -1,7 +1,11 @@
 /*
 	COMP-3150 Final Project Submission
-	Triggers for Hospital Database
+  SCHEMA Queries
 	These queries are by: Shieanne Bennet and Nonika Reingold
+	EMR Schema query file to setup tables
+	for the database. Use DropQuery.sql
+	first to ensure no duplicate or
+	conflicting data is present.
 */
 
 CREATE SCHEMA EMR

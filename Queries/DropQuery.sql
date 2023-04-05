@@ -1,3 +1,11 @@
+/*
+	Author: Shieanne Bennett
+	COMP-3150 Final Project Submission
+	Drop Queries for Hospital Database, provided
+	to verify no duplicate data exists in the
+	database. Run before EMRSCHEMA.sql
+*/
+
 -- Drop relationship tables first since they contain
 -- foreign keys and will prevent entity tables from
 -- being dropped.
