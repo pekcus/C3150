@@ -1,6 +1,7 @@
 /*
-	Author: Shieanne Bennett
 	COMP-3150 Final Project Submission
+  SCHEMA Queries
+	These queries are by: Shieanne Bennet and Nonika Reingold
 	EMR Schema query file to setup tables
 	for the database. Use DropQuery.sql
 	first to ensure no duplicate or
@@ -90,7 +91,7 @@ CREATE SCHEMA EMR
         PrimaryDocID INT NOT NULL,
         Admitted DATE NOT NULL,
         Discharged DATE NOT NULL,
-        PRIMARY KEY (HospIDNo, PatientIDNo),
+        PRIMARY KEY (HospIDNo, PatientIDNo, Admitted, Discharged),
         FOREIGN KEY (HospIDNo) REFERENCES Hospital(HospID),
         FOREIGN KEY (PatientIDNo) REFERENCES Patient(PatientID)
         );

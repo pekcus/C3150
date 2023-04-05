@@ -1,3 +1,25 @@
+/*
+	COMP-3150 Final Project Submission
+	Triggers for Hospital Database
+	These queries are by: Shieanne Bennet and Nonika Reingold
+*/
+
+CREATE TRIGGER TR_Admit_Insert
+ON AdmittedTo
+INSTEAD OF INSERT
+AS
+BEGIN
+    IF (SELECT COUNT(*) FROM inserted) + (SELECT COUNT(*) FROM AdmittedTo, inserted WHERE inserted.HospIDNo = AdmittedTo.HospIDNo AND 
+	(AdmittedTo.Admitted <= inserted.Admitted AND AdmittedTo.Discharged > inserted.Admitted)) <= 10
+    BEGIN
+        INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
+        SELECT HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged
+        FROM inserted
+    END
+END
+GO
+--DROP TRIGGER TR_Admit_Insert
+
 CREATE TRIGGER TR_Patient_Insert
 ON Patient
 INSTEAD OF INSERT
