@@ -2,9 +2,9 @@
 	Author: Shieanne Bennett
 	COMP-3150 Final Project Submission
 	EMR Schema query file to setup tables
-    for the database. Use DropQuery.sql
-    first to ensure no duplicate or
-    conflicting data is present.
+	for the database. Use DropQuery.sql
+	first to ensure no duplicate or
+	conflicting data is present.
 */
 
 CREATE SCHEMA EMR
