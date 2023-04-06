@@ -13,8 +13,7 @@ BEGIN
     IF (((SELECT COUNT(*) FROM inserted) + (SELECT COUNT(*) FROM AdmittedTo, inserted 
 	WHERE inserted.HospIDNo = AdmittedTo.HospIDNo AND 
 	(AdmittedTo.Admitted <= inserted.Admitted AND AdmittedTo.Discharged > inserted.Admitted)) <= 10)
--- AND the patient is not admitted into a different hospital (i.e. patient cannot be admitted
--- to more than one hospital at the same time - they are in different locations
+-- AND the patient is not already admitted
 	AND (SELECT COUNT(*) FROM AdmittedTo, inserted 
 	WHERE (inserted.PatientIDNo = AdmittedTo.PatientIDNo AND 
 	(AdmittedTo.Admitted <= inserted.Admitted AND AdmittedTo.Discharged > inserted.Admitted))) = 0)

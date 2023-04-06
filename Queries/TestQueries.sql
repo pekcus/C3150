@@ -13,7 +13,7 @@
 	but patient 7 will not be, since the hospital is full.
  */
 
- BEGIN
+BEGIN
 INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
 VALUES (1, 2, 418, '2023-03-15', '2023-03-16');
 INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
