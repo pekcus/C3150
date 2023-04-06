@@ -5,7 +5,7 @@ Our group selected the hospital project topic and were required to make a databa
 
 # Navigation
 
-There are three folders titled: Documentation, Queries, and TestData.
+There are folders titled: Documentation, Queries, Extras, and TestData.
 Documentation contains a pdf file describing the project and a short video presentation on the design and implementation. Queries contains all SQL query files, they are DropQuery, ConstraintsQuery, TriggerQuery, FunctionsQuery, InsertQuery, BulkInsert, TestQuery, EMRSCHEMA, ComplicatedQueries and SelectQuery as well as a folder titled Inserts with all inidividual table insert queries. Finally, TestData contains all important csv files with our project data.
 
 # Usage
