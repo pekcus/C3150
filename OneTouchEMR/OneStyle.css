@@ -1,0 +1,10 @@
+body {
+	background-image: url('file:///Users/shieannebennett/Desktop/medicalbackground.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+table, th, td {
+    border: 1px, solid black;
+}

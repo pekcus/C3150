@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+	<title>OneTouchEMR</title>
+	<link rel="stylesheet" href="OneStyle.css">
+
+	<meta name="description" content="OneTouchEMR - A simple web based medical management system for hospitals and private medical offices.">
+	<meta name="author" content="OneTouch">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<html>
+    <body style="background-image: url('/Users/shieannebennett/Desktop/OneTouchEMR/medicalbackground.jpg');">
+        <div class="splash" style="padding-top: 15%">
+            <center>
+                <h1>Welcome to OneTouchEMR!</h1>
+                <h4>Please sign into your organization to view your database.</h4>
+                
+                <div class="LocationLabel">
+                    <label for="Hospital">Select your location:</label>
+                </div>
+               
+                <div class="LocationSelect" style="padding: 0.5%">
+                    <!-- Temporary values, these need to be populated from the database options. So if we add or remove locations the list will reflect that. -->
+                    <select name="Hospital" id="SelectLocation" required>
+                      <option value="Windsor">Windsor</option>
+                      <option value="Chatham">Chatham</option>
+                      <option value="Essex">Essex</option>
+                    </select>
+                </div>
+                
+                <div class="StaffLabel">
+                    <label for="Staff">Select your staff type:</label>
+                </div>
+                
+                <div class="StaffSelect" style="padding: 0.5%">
+                    <!-- These three options are hard coded but affect the options in the user select. Example: If Doctor is selected, the User select will show Doctors who work at the above selected location. These doctors are found in the table and reflected by the table so if any values are changed they will be seen here. -->
+                    <select name="Staff" id="SelectStaffType" required>
+                      <option value="Admin">Admin</option>
+                      <option value="Doctor">Doctor</option>
+                      <option value="Nurse">Nurse</option>
+                    </select>
+                </div>
+                
+                <div class="UserLabel">
+                    <label for="User">Select your UserID:</label>
+                </div>
+                
+                <div class="UserSelect" style="padding: 0.5%">
+                    <!-- These values are found from the database, so any changes to the database should be reflected here. If the above select is Doctor, then doctors at selected location are displayed, if the above select is nurses then nurses from this location are displayed. If the select is Admin then the only option here is admin. -->
+                    <select name="User" id="SelectUser" required>
+                      <option value="Admin">Admin</option>
+                      <option value="TestDoctor">TestDoctor</option>
+                      <option value="TestNurse">TestNurse</option>
+                    </select>
+                </div>
+
+                <!-- Upon clicking login, the window that it navigates to is based on which user type is selected, the information that is displayed in the userID determines which exact information is found on the page. -->
+                <div class="Login" style="padding: 0.5%">
+                    <button type="button">Login</button>
+                </div>
+            </center>
+        </div>
+    </body>
+</html>
