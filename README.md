@@ -8,6 +8,10 @@ Our group selected the hospital project topic and were required to make a databa
 There are folders titled: Documentation, Queries, Extras, and TestData.
 Documentation contains a pdf file describing the project and a short video presentation on the design and implementation. Queries contains all SQL query files, they are DropQuery, ConstraintsQuery, TriggerQuery, FunctionsQuery, InsertQuery, BulkInsert, TestQuery, EMRSCHEMA, ComplicatedQueries and SelectQuery as well as a folder titled Inserts with all inidividual table insert queries. Finally, TestData contains all important csv files with our project data.
 
+# Video Presentation
+
+You can view our video presentation at the following link: https://youtu.be/-cwgOfRp4ug
+
 # Usage
 
 In the queries folder, we suggest you run in a specific order.
@@ -70,4 +74,4 @@ Q: I'm trying to run BulkInsert.sql but it's not letting me.
 A: Firstly, if you're using Azure, BULK INSERT statements don't work. Use the InsertQuery.sql file instead. If you're using SSMS, check that all filepaths are correct.
 
 # Authors
-Ryohei Takamorri, Veronika Reingold, Shieanne Bennett
+Veronika Reingold, Shieanne Bennett
