@@ -5,13 +5,18 @@
 */
 
 -- Derived Attribute: Total Cost of Drug
-SELECT OrdersDrug.HospIDNo, Drug.BrandName, OrdersDrug.Amount, (Drug.Cost*(1+(Stocks.MarkUp/100))*OrdersDrug.Amount) AS TotalCost
-FROM (Drug JOIN (Stocks JOIN OrdersDrug ON Stocks.DrugIDNo = OrdersDrug.DrugIDNo) ON (DrugID = Stocks.DrugIDNo AND Stocks.PharmIDNo = OrdersDrug.PharmIDNo))
+SELECT OrdersDrug.HospIDNo, Drug.BrandName, OrdersDrug.Amount, 
+(Drug.Cost*(1+(Stocks.MarkUp/100))*OrdersDrug.Amount) AS TotalCost
+FROM (Drug JOIN (Stocks JOIN OrdersDrug ON Stocks.DrugIDNo = OrdersDrug.DrugIDNo) 
+ON (DrugID = Stocks.DrugIDNo AND Stocks.PharmIDNo = OrdersDrug.PharmIDNo));
 
 -- Derived Attribute: Patient's Total Days and Cost of Stay
 SELECT PatientIDNo, HospID, PrimaryDocID, DATEDIFF(day, Admitted, Discharged) AS Days, (DATEDIFF(day, Admitted, Discharged)*DailyCost) AS Cost
 FROM AdmittedTo, Hospital
-WHERE HospIDNo = HospID
+WHERE HospIDNo = HospID;
 
 -- Derived Attribute: Nurse's NumPatients
-SELECT COUNT(*) FROM 
+SELECT NurseIDNo, COUNT(*) AS NumPatients FROM CaresFor GROUP BY CaresFor.NurseIDNo;
+
+-- Derived Attribute: Doctor's NumPatients
+SELECT DocIDNo, COUNT(*) AS NumPatients FROM Treats GROUP BY Treats.DocIDNo;

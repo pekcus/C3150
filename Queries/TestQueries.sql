@@ -5,6 +5,29 @@
 	These queries are by: Nonika Reingold
 */
 
+
+/* 
+	To check the second condition of Admit Trigger, let us insert a patient into a hospital
+	while they are already admitted.
+ */
+ 
+ BEGIN
+ -- Patient 1 is admitted into hospital 1 from 2023-03-11 to 2023-04-01
+ SELECT * FROM AdmittedTo WHERE PatientIDNo = 1;
+ -- Trying to admit this patient into the same hospital during the patient's stay should not work.
+ INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
+ VALUES (1, 1, 418, '2023-03-15', '2023-03-16');
+ -- Trying to admit this patient into a different hospital during the patient's stay should not work.
+ INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
+ VALUES (2, 1, 343, '2023-03-15', '2023-03-16');
+ -- Trying to admit this patient into any hospital at any other time should work.
+ INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
+ VALUES (2, 1, 343, '2023-04-01', '2023-04-02');
+ -- Expected output: patient 1 is only AdmittedTo two times (the original, and the above 1-day stay in April.
+ SELECT * FROM AdmittedTo WHERE PatientIDNo = 1;
+ END
+ GO
+
 /* 
 	To check the Admit Trigger, let us insert the more than the maximum number of patients
 	into one hospital on a specific day.
@@ -31,8 +54,3 @@ VALUES (1, 7, 562, '2023-03-15', '2023-03-17');
 SELECT * FROM AdmittedTo WHERE HospIDNo = 1 AND Admitted <= '2023-03-15' AND Discharged >= '2023-03-16';
 END
 GO
-
-/* 
-	To check the second condition of Admit Trigger, let us insert a patient into a hospital
-	while they are already admitted.
- */
