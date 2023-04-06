@@ -25,6 +25,22 @@ BEGIN
 END
 GO
 
+CREATE TRIGGER TR_Cares_Insert
+ON CaresFor
+INSTEAD OF INSERT
+AS
+BEGIN
+-- Ensure that the nurse does not have more than 2 patients including the insertion.
+	IF ((SELECT COUNT(*) FROM inserted) + (SELECT COUNT(*) FROM CaresFor, inserted
+	WHERE inserted.NurseIDNo = Caresfor.NurseIDNo) <=2)
+	BEGIN
+        INSERT INTO CaresFor (NurseIDNo, PatientIDNo)
+        SELECT NurseIDNo, PatientIDNo
+        FROM inserted;
+    END
+END
+GO
+
 CREATE TRIGGER TR_Patient_Insert
 ON Patient
 INSTEAD OF INSERT
