@@ -24,6 +24,7 @@
  INSERT INTO AdmittedTo (HospIDNo, PatientIDNo, PrimaryDocID, Admitted, Discharged)
  VALUES (2, 1, 343, '2023-04-01', '2023-04-02');
  -- Expected output: patient 1 is only AdmittedTo two times (the original, and the above 1-day stay in April.
+ -- Note: this also shows that patients can be transferred between hospitals (from HospID = 1 to 2 on the same day).
  SELECT * FROM AdmittedTo WHERE PatientIDNo = 1;
  END
  GO
