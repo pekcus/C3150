@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'EMRDB',
         'HOST': 'localhost',
         'USER': 'sa',
-        'PASSWORD': 'Shae1599!!',
+        'PASSWORD': 'Password123',
         'PORT': '1433',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
